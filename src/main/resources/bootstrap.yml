@@ -3,3 +3,8 @@ spring:
     config:
       uri:
         - http://localhost:9094
+
+logging:
+  file:
+    path:
+      C:\Users\shubham.wattamwar\springBoot\microservice.log

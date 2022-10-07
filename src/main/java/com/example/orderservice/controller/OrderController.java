@@ -5,6 +5,7 @@ import com.example.orderservice.entity.Order;
 import com.example.orderservice.entity.TransactionRequest;
 import com.example.orderservice.entity.TransactionResponse;
 import com.example.orderservice.service.OrderService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +20,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/bookOrder")
-    public TransactionResponse bookOrder(@RequestBody TransactionRequest transactionRequest){
+    public TransactionResponse bookOrder(@RequestBody TransactionRequest transactionRequest) throws JsonProcessingException {
 
         return orderService.saveOrder(transactionRequest);
     }
